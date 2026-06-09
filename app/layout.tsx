@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
 
-const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT || 'ca-pub-XXXXXXXXXXXXXXXX';
+const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT || 'ca-pub-9475852513146230';
 
 export const metadata: Metadata = {
   title: 'BizMind Pro | ビジネス向けマインドマップ作成ツール',
