@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Hiragino Sans', 'Noto Sans JP', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* AdSense誤クリック防止：広告枠の周囲に最低限の余白を強制 */
+.adsense-slot {
+  margin: 24px 0;
+  clear: both;
+  min-height: 100px;
+}
+.adsense-slot ins {
+  display: block !important;
+}
+
+/* マインドマップキャンバスと広告の物理的分離 */
+.mindmap-canvas-wrapper {
+  isolation: isolate;
+  position: relative;
+}
+.mindmap-canvas-wrapper::after {
+  content: '';
+  display: block;
+  height: 32px;
+}
