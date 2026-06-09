@@ -66,7 +66,7 @@ export default function AboutPage() {
 
           <div className="bg-slate-50 border rounded-lg p-5 mb-6">
             <div className="text-sm text-slate-500 mb-1">メールでのお問い合わせ</div>
-            <div className="font-mono text-lg text-slate-900">contact@bizmind-pro.example.com</div>
+            <div className="font-mono text-lg text-slate-900">satou243satou@gmail.com</div>
             <p className="text-xs text-slate-500 mt-2">
               ※ スパム対策のため、画像化したメールアドレスや問い合わせフォームの利用を推奨します。
             </p>
