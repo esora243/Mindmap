@@ -22,7 +22,7 @@ export default function AboutPage() {
             <dd className="md:col-span-2 text-slate-800">BizMind Pro</dd>
 
             <dt className="font-semibold text-slate-600">サイトURL</dt>
-            <dd className="md:col-span-2 text-slate-800">https://bizmind-pro.example.com</dd>
+            <dd className="md:col-span-2 text-slate-800">https://medical-school-transfer-for-college.vercel.app/</dd>
 
             <dt className="font-semibold text-slate-600">運営者名</dt>
             <dd className="md:col-span-2 text-slate-800">BizMind Pro 編集部</dd>
@@ -95,7 +95,7 @@ export default function AboutPage() {
                 name="email"
                 required
                 className="w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="example@example.com"
+                placeholder="お問い合わせフォームよりお願いします"
               />
             </div>
             <div>
