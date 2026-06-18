@@ -30,6 +30,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
           crossOrigin="anonymous"
         />
+
+        {/* i-mobile共通スクリプトを追加 */}
+        <Script
+          id="imobile-script"
+          async
+          strategy="afterInteractive"
+          src="https://imp-adedge.i-mobile.co.jp/script/v1/spot.js?20220104"
+        />
+
         {children}
       </body>
     </html>
