@@ -4,6 +4,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import MindMapTool from '@/components/MindMapTool';
 import AdSenseComponent from '@/components/AdSenseComponent';
+import IMobileAdComponent from '@/components/IMobileAdComponent'; // ★ i-mobile用コンポーネントをインポート
 
 // SSG: ビルド時に article.json を読み込み、HTMLに記事本文を埋め込む
 // → AdSenseクローラーがコンテンツを認識できる
@@ -21,6 +22,14 @@ export default function HomePage() {
       ============================================================ */}
       <div className="max-w-7xl mx-auto px-4 pt-4">
         <AdSenseComponent slot="1111111111" format="auto" responsive label="広告" />
+        
+        {/* ★ 1つ目のi-mobile広告を追加 ★ */}
+        <IMobileAdComponent 
+          pid={85055} 
+          mid={593695} 
+          asid={1934473} 
+          elementId="im-1994ba6a1bbf4e9d815ff6f7ba94d4f8" 
+        />
       </div>
 
       {/* ===== ヒーロー ===== */}
@@ -57,6 +66,14 @@ export default function HomePage() {
       ============================================================ */}
       <div className="max-w-7xl mx-auto px-4 py-4">
         <AdSenseComponent slot="2222222222" format="fluid" layoutKey="-fb+5w+4e-db+86" label="広告" />
+        
+        {/* ★ 2つ目のi-mobile広告を追加 ★ */}
+        <IMobileAdComponent 
+          pid={85055} 
+          mid={593695} 
+          asid={1934474} 
+          elementId="im-12ef6a1f2a5d4e068874f90c75070007" 
+        />
       </div>
 
       {/* ===== 解説テキスト（SEO） ===== */}
