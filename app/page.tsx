@@ -3,11 +3,11 @@ import { getArticleData } from '@/lib/data';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import MindMapTool from '@/components/MindMapTool';
-import AdSenseComponent from '@/components/AdSenseComponent';
+// AdSenseエラーを防ぐため一旦無効化
+// import AdSenseComponent from '@/components/AdSenseComponent'; 
 import IMobileAdComponent from '@/components/IMobileAdComponent';
 
 // SSG: ビルド時に article.json を読み込み、HTMLに記事本文を埋め込む
-// → AdSenseクローラーがコンテンツを認識できる
 export default function HomePage() {
   const data = getArticleData();
 
@@ -16,19 +16,18 @@ export default function HomePage() {
       <SiteHeader />
 
       {/* ============================================================
-          【広告配置戦略 1】 ヘッダー直下のディスプレイ広告
-          - インタラクティブUIから物理的に離れた位置
-          - レスポンシブで誤タップを防止
+          ヘッダー直下の広告配置
       ============================================================ */}
       <div className="max-w-7xl mx-auto px-4 pt-4">
-        <AdSenseComponent slot="1111111111" format="auto" responsive label="広告" />
+        {/* AdSenseは本物のIDができるまでコメントアウト（400エラー防止） */}
+        {/* <AdSenseComponent slot="1111111111" format="auto" responsive label="広告" /> */}
         
-        {/* 1つ目のi-mobile広告 */}
+        {/* ご提示いただいたi-mobile広告 */}
         <IMobileAdComponent 
           pid={85055} 
           mid={593695} 
-          asid={1934473} 
-          elementId="im-1994ba6a1bbf4e9d815ff6f7ba94d4f8" 
+          asid={1934474} 
+          elementId="im-797bc68d0b51400d91e969222dee9452" 
         />
       </div>
 
@@ -60,20 +59,12 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================
-          【広告配置戦略 2】 ツール下の区切り広告（インフィード推奨）
-          - キャンバスから 32px 以上の余白を強制（globals.css）
-          - 操作UIと視覚的に明確に区別
+          ツール下の広告配置
       ============================================================ */}
       <div className="max-w-7xl mx-auto px-4 py-4">
-        <AdSenseComponent slot="2222222222" format="fluid" layoutKey="-fb+5w+4e-db+86" label="広告" />
+        {/* <AdSenseComponent slot="2222222222" format="fluid" layoutKey="-fb+5w+4e-db+86" label="広告" /> */}
         
-        {/* 2つ目のi-mobile広告 */}
-        <IMobileAdComponent 
-          pid={85055} 
-          mid={593695} 
-          asid={1934474} 
-          elementId="im-12ef6a1f2a5d4e068874f90c75070007" 
-        />
+        {/* i-mobile広告を追加する場合はここにコンポーネントを配置します */}
       </div>
 
       {/* ===== 解説テキスト（SEO） ===== */}
@@ -165,16 +156,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ★ 3つ目のi-mobile広告（記事一覧とFAQの間） ★ */}
-      <div className="max-w-7xl mx-auto px-4 py-4">
-        <IMobileAdComponent 
-          pid={85055} 
-          mid={593695} 
-          asid={1934474} 
-          elementId="im-797bc68d0b51400d91e969222dee9452" 
-        />
-      </div>
-
       {/* ===== FAQ ===== */}
       <section id="faq" className="max-w-7xl mx-auto px-4 py-8">
         <div className="bg-white border rounded-xl shadow-sm p-6 md:p-10">
@@ -202,12 +183,10 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================
-          【広告配置戦略 3】 フッター上部のレスポンシブ広告
-          - 記事閲読完了後の自然な配置
-          - フッターナビゲーションから min 80px の余白
+          フッター上部の広告配置
       ============================================================ */}
       <div className="max-w-7xl mx-auto px-4 py-4">
-        <AdSenseComponent slot="3333333333" format="auto" responsive label="広告" />
+        {/* <AdSenseComponent slot="3333333333" format="auto" responsive label="広告" /> */}
       </div>
 
       <SiteFooter />
