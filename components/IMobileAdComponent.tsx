@@ -1,8 +1,6 @@
-
-// components/IMobileAdComponent.tsx
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 interface IMobileAdProps {
   pid: number;
@@ -18,15 +16,25 @@ declare global {
 }
 
 export default function IMobileAdComponent({ pid, mid, asid, elementId }: IMobileAdProps) {
-  const pushedRef = useRef(false);
-
   useEffect(() => {
     // サーバーサイドレンダリング時はスキップ
     if (typeof window === 'undefined') return;
-    
-    // すでにpush済みの場合は二重実行を防ぐ
-    if (pushedRef.current) return;
 
+    // Reactの再描画時に、すでに広告（iframe等）が展開済みなら二重呼び出しを防止
+    const container = document.getElementById(elementId);
+    if (container && container.hasChildNodes()) {
+      return; 
+    }
+
+    // i-mobileのベーススクリプトがページに無ければ動的に読み込む
+    if (!document.querySelector('script[src*="spot.js"]')) {
+      const script = document.createElement('script');
+      script.src = "https://imp-adedge.i-mobile.co.jp/script/v1/spot.js?20220104";
+      script.async = true;
+      document.head.appendChild(script);
+    }
+
+    // 広告リクエストを送信
     window.adsbyimobile = window.adsbyimobile || [];
     window.adsbyimobile.push({
       pid: pid,
@@ -36,16 +44,15 @@ export default function IMobileAdComponent({ pid, mid, asid, elementId }: IMobil
       display: "inline",
       elementid: elementId
     });
-    
-    pushedRef.current = true;
+
   }, [pid, mid, asid, elementId]);
 
   return (
-    <div className="imobile-slot my-6 flex flex-col items-center justify-center">
+    <div className="imobile-slot my-6 flex flex-col items-center justify-center min-h-[100px] w-full">
       <div className="text-[10px] text-slate-400 mb-1 text-center tracking-wider">
         — 広告 —
       </div>
-      {/* 広告がレンダリングされるターゲット要素 */}
+      {/* ここにi-mobileの広告が挿入されます */}
       <div id={elementId}></div>
     </div>
   );
