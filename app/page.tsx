@@ -4,7 +4,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import MindMapTool from '@/components/MindMapTool';
 import AdSenseComponent from '@/components/AdSenseComponent';
-import IMobileAdComponent from '@/components/IMobileAdComponent'; // ★ i-mobile用コンポーネントをインポート
+import IMobileAdComponent from '@/components/IMobileAdComponent';
 
 // SSG: ビルド時に article.json を読み込み、HTMLに記事本文を埋め込む
 // → AdSenseクローラーがコンテンツを認識できる
@@ -23,7 +23,7 @@ export default function HomePage() {
       <div className="max-w-7xl mx-auto px-4 pt-4">
         <AdSenseComponent slot="1111111111" format="auto" responsive label="広告" />
         
-        {/* ★ 1つ目のi-mobile広告を追加 ★ */}
+        {/* 1つ目のi-mobile広告 */}
         <IMobileAdComponent 
           pid={85055} 
           mid={593695} 
@@ -67,7 +67,7 @@ export default function HomePage() {
       <div className="max-w-7xl mx-auto px-4 py-4">
         <AdSenseComponent slot="2222222222" format="fluid" layoutKey="-fb+5w+4e-db+86" label="広告" />
         
-        {/* ★ 2つ目のi-mobile広告を追加 ★ */}
+        {/* 2つ目のi-mobile広告 */}
         <IMobileAdComponent 
           pid={85055} 
           mid={593695} 
@@ -164,6 +164,16 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* ★ 3つ目のi-mobile広告（記事一覧とFAQの間） ★ */}
+      <div className="max-w-7xl mx-auto px-4 py-4">
+        <IMobileAdComponent 
+          pid={85055} 
+          mid={593695} 
+          asid={1934474} 
+          elementId="im-797bc68d0b51400d91e969222dee9452" 
+        />
+      </div>
 
       {/* ===== FAQ ===== */}
       <section id="faq" className="max-w-7xl mx-auto px-4 py-8">
